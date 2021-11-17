@@ -1,0 +1,139 @@
+backend: tensorflow
+class_name: Sequential
+config:
+  layers:
+  - class_name: Conv2D
+    config:
+      activation: relu
+      activity_regularizer: null
+      batch_input_shape: !!python/tuple
+      - null
+      - 1
+      - 28
+      - 28
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      data_format: channels_first
+      dilation_rate: &id002 !!python/tuple
+      - 1
+      - 1
+      dtype: float32
+      filters: 32
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: GlorotUniform
+        config:
+          seed: null
+      kernel_regularizer: null
+      kernel_size: !!python/tuple
+      - 3
+      - 3
+      name: conv2d_156
+      padding: valid
+      strides: !!python/tuple
+      - 1
+      - 1
+      trainable: true
+      use_bias: true
+  - class_name: MaxPooling2D
+    config:
+      data_format: channels_first
+      dtype: float32
+      name: max_pooling2d_155
+      padding: valid
+      pool_size: &id001 !!python/tuple
+      - 2
+      - 2
+      strides: *id001
+      trainable: true
+  - class_name: Conv2D
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      data_format: channels_first
+      dilation_rate: *id002
+      dtype: float32
+      filters: 64
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: GlorotUniform
+        config:
+          seed: null
+      kernel_regularizer: null
+      kernel_size: !!python/tuple
+      - 3
+      - 3
+      name: conv2d_157
+      padding: valid
+      strides: !!python/tuple
+      - 1
+      - 1
+      trainable: true
+      use_bias: true
+  - class_name: MaxPooling2D
+    config:
+      data_format: channels_first
+      dtype: float32
+      name: max_pooling2d_156
+      padding: valid
+      pool_size: &id003 !!python/tuple
+      - 2
+      - 2
+      strides: *id003
+      trainable: true
+  - class_name: Flatten
+    config:
+      data_format: channels_last
+      dtype: float32
+      name: flatten_70
+      trainable: true
+  - class_name: Dense
+    config:
+      activation: relu
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      dtype: float32
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: GlorotUniform
+        config:
+          seed: null
+      kernel_regularizer: null
+      name: dense_150
+      trainable: true
+      units: 512
+      use_bias: true
+  - class_name: Dense
+    config:
+      activation: softmax
+      activity_regularizer: null
+      bias_constraint: null
+      bias_initializer:
+        class_name: Zeros
+        config: {}
+      bias_regularizer: null
+      dtype: float32
+      kernel_constraint: null
+      kernel_initializer:
+        class_name: GlorotUniform
+        config:
+          seed: null
+      kernel_regularizer: null
+      name: dense_151
+      trainable: true
+      units: 5
+      use_bias: true
+  name: sequential_72
+keras_version: 2.2.4-tf
